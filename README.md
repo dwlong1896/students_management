@@ -22,14 +22,14 @@ Hoặc sử dụng Neon cần thêm ?sslmode=require vào cuối URL
 
 2 Chạy với Maven
 
-- Cài đặt các dependency và build dự án: ./mvnw clean install -DskipTests
-- Chạy ứng dụng: ./mvnw spring-boot:run
+- Cài đặt các dependency và build dự án: ```./mvnw clean install -DskipTests```
+- Chạy ứng dụng: ```./mvnw spring-boot:run```
 
 3 Chạy với Docker
 
-- Build file .jar: ./mvnw clean package -DskipTests
-- Build Docker Image: docker build -t student-management .
-- Chạy Container với file .env: docker run -p 8080:8080 --env-file .env student-management
+- Build file .jar: ```./mvnw clean package -DskipTests```
+- Build Docker Image: ```docker build -t student-management .```
+- Chạy Container với file .env: ```docker run -p 8080:8080 --env-file .env student-management```
 
 4 Truy cập ứng dụng
 
