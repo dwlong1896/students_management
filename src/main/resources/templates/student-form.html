@@ -1,0 +1,85 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Sinh Viên</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 40px;
+        background-color: #f4f7f6;
+      }
+      .form-container {
+        max-width: 500px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .btn-save {
+        width: 100%;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      input[readonly] {
+        background-color: #e9ecef;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1
+        th:text="${student.id == null} ? 'Thêm Mới Sinh Viên' : 'Chỉnh Sửa Sinh Viên'"
+      ></h1>
+
+      <form th:action="@{/students/save}" th:object="${student}" method="POST">
+        <div class="form-group">
+          <label>Mã Số Sinh Viên (ID):</label>
+          <input
+            type="text"
+            th:field="*{id}"
+            th:readonly="${student.id != null}"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Họ và Tên:</label>
+          <input type="text" th:field="*{name}" required />
+        </div>
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" th:field="*{email}" required />
+        </div>
+        <div class="form-group">
+          <label>Tuổi:</label>
+          <input type="number" th:field="*{age}" min="1" required />
+        </div>
+        <button type="submit" class="btn btn-save">Lưu Thông Tin</button>
+        <div style="margin-top: 15px; text-align: center">
+          <a th:href="@{/students}">Hủy bỏ</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
