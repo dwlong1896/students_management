@@ -12,9 +12,11 @@ C. CÁCH CHẠY DỰ ÁN
 
 - Tạo file .env ở thư mục gốc của dự án và điền thông tin kết nối Database:
 
-  DATABASE_URL=jdbc:postgresql://<host>:<port>/<DB_NAME>
-  DB_USER=<YOUR_USERNAME>
-  DB_PASSWORD=<YOUR_PASSWORD>
+```
+DATABASE_URL=jdbc:postgresql://<HOST>:<PORT>/<DB_NAME>
+DB_USER=<YOUR_USERNAME>
+DB_PASSWORD=<YOUR_PASSWORD>
+```
 
 Hoặc sử dụng Neon cần thêm ?sslmode=require vào cuối URL
 
