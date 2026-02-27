@@ -96,19 +96,15 @@
       <table>
         <thead>
           <tr>
-            <th>ID</th>
+            <th>STT</th>
             <th>Họ và Tên</th>
-            <th>Email</th>
-            <th>Tuổi</th>
             <th>Thao tác</th>
           </tr>
         </thead>
         <tbody>
-          <tr th:each="student : ${dsSinhVien}">
-            <td th:text="${student.id}"></td>
+          <tr th:each="student, state : ${dsSinhVien}">
+            <td th:text="${state.index + 1}"></td>
             <td th:text="${student.name}"></td>
-            <td th:text="${student.email}"></td>
-            <td th:text="${student.age}"></td>
             <td>
               <div class="action-buttons">
                 <a

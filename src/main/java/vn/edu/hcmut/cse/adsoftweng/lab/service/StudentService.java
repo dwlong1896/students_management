@@ -13,7 +13,7 @@ public class StudentService {
         return repository.findAll();
     }
 
-    public Student getById(String id){
+    public Student getById(int id){
         return repository.findById(id).orElse(null);
     }
 
@@ -27,7 +27,7 @@ public class StudentService {
     }
 
     // Xóa sinh viên (Yêu cầu 1.2)
-    public void delete(String id) {
+    public void delete(int id) {
         repository.deleteById(id);
     }
 }

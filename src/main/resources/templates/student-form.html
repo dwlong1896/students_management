@@ -51,6 +51,7 @@
         cursor: not-allowed;
       }
       .btn-cancel {
+        text-decoration: none;
         text-align: center;
         width: 100%;
         background-color: #dc3434;
@@ -70,15 +71,7 @@
       ></h1>
 
       <form th:action="@{/students/save}" th:object="${student}" method="POST">
-        <div class="form-group">
-          <label>Mã Số Sinh Viên (ID):</label>
-          <input
-            type="text"
-            th:field="*{id}"
-            th:readonly="${student.id != null}"
-            required
-          />
-        </div>
+        <input type="hidden" th:field="*{id}" />
         <div class="form-group">
           <label>Họ và Tên:</label>
           <input type="text" th:field="*{name}" required />
