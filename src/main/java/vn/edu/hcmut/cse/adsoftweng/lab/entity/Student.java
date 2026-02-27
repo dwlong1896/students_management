@@ -10,15 +10,14 @@ import jakarta.persistence.Table;
 @Table(name = "students") 
 public class Student {
     @Id // Đánh dấu là khóa chính [cite: 46]
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id; // Sử dụng String cho MSSV hoặc UUID [cite: 47]
+    private String id; // Sử dụng String cho MSSV hoặc UUID [cite: 47]
     private String name;
     private String email;
     private int age;
 
     // Constructors
     public Student() {}
-    public Student(int id, String name, String email, int age) {
+    public Student(String id, String name, String email, int age) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -26,8 +25,8 @@ public class Student {
     }
 
     // Getters và Setters [cite: 53]
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
     public String getEmail() { return email; }

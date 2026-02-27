@@ -34,7 +34,7 @@ public class StudentWebController {
 
     // 1.2 Trang Chi Tiết [cite: 16, 17]
     @GetMapping("/{id}")
-    public String getStudentDetail(@PathVariable int id, Model model) {
+    public String getStudentDetail(@PathVariable String id, Model model) {
         model.addAttribute("student", service.getById(id));
         return "student-detail";
     }
@@ -48,7 +48,7 @@ public class StudentWebController {
 
     // 1.3 Form Chỉnh Sửa [cite: 27]
     @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable int id, Model model) {
+    public String showEditForm(@PathVariable String id, Model model) {
         model.addAttribute("student", service.getById(id));
         return "student-form";
     }
@@ -62,7 +62,7 @@ public class StudentWebController {
 
     // Xóa sinh viên [cite: 20, 22]
     @PostMapping("/delete/{id}")
-    public String deleteStudent(@PathVariable int id) {
+    public String deleteStudent(@PathVariable String id) {
         service.delete(id);
         return "redirect:/students";
     }
